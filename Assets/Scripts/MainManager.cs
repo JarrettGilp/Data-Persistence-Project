@@ -65,6 +65,7 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
+        setPoints(m_Points);
         ScoreText.text = $"Score : {m_Points}";
     }
 
@@ -72,5 +73,15 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+    }
+
+    public int getPoints()
+    {
+        return m_Points;
+    }
+
+    public void setPoints(int m_Points)
+    {
+        this.m_Points = m_Points;
     }
 }
